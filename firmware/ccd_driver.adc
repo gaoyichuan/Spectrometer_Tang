@@ -1,0 +1,29 @@
+## Tang Pins
+set_pin_assignment {CLK_IN} { LOCATION = K14; }		##24MHZ
+set_pin_assignment {RST_N} { LOCATION = K16; }		##USER_KEY
+
+## CCD Pins
+set_pin_assignment {CCD_SH} { LOCATION = B6; IOSTANDARD = LVCMOS33;  } 
+set_pin_assignment {CCD_CLK} { LOCATION = B10; IOSTANDARD = LVCMOS33;  } 
+set_pin_assignment {CCD_RS} { LOCATION = C9; IOSTANDARD = LVCMOS33;  } 
+set_pin_assignment {CCD_SP} { LOCATION = B14; IOSTANDARD = LVCMOS33;  } 
+# set_pin_assignment {CCD_OS} { LOCATION = A3; IOSTANDARD = LVCMOS33;  } 
+
+# FT245 Pins
+set_pin_assignment {FT_RD} { LOCATION = C5; IOSTANDARD = LVCMOS33;  } 
+set_pin_assignment {FT_WR} { LOCATION = T7; IOSTANDARD = LVCMOS33;  } 
+set_pin_assignment {FT_TXE} { LOCATION = A4; IOSTANDARD = LVCMOS33;  } 
+set_pin_assignment {FT_RXF} { LOCATION = A3; IOSTANDARD = LVCMOS33;  } 
+set_pin_assignment {FT_D[0]} { LOCATION = N3; IOSTANDARD = LVCMOS33;  } 
+set_pin_assignment {FT_D[1]} { LOCATION = R2; IOSTANDARD = LVCMOS33;  } 
+set_pin_assignment {FT_D[2]} { LOCATION = M4; IOSTANDARD = LVCMOS33;  } 
+set_pin_assignment {FT_D[3]} { LOCATION = P5; IOSTANDARD = LVCMOS33;  } 
+set_pin_assignment {FT_D[4]} { LOCATION = P2; IOSTANDARD = LVCMOS33;  } 
+set_pin_assignment {FT_D[5]} { LOCATION = N5; IOSTANDARD = LVCMOS33;  } 
+set_pin_assignment {FT_D[6]} { LOCATION = N4; IOSTANDARD = LVCMOS33;  } 
+set_pin_assignment {FT_D[7]} { LOCATION = P4; IOSTANDARD = LVCMOS33;  } 
+
+# RGB LED Pins
+set_pin_assignment {RGB_LED[0]} { LOCATION = R3; IOSTANDARD = LVCMOS33; }	##LED_R, R3
+set_pin_assignment {RGB_LED[1]} { LOCATION = J14; IOSTANDARD = LVCMOS33; }	##LED_G, J14
+set_pin_assignment {RGB_LED[2]} { LOCATION = P13; IOSTANDARD = LVCMOS33; }	##LED_B, P13
