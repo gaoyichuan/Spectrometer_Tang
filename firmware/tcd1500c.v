@@ -1,111 +1,104 @@
-module tcd1500c(input CLK20M,
-                input TRIG,
-                output SH,
-                output CLK,
-                output RS,
-                output SP);
+module tcd1500c (
+           input clk,
+           input rst_n,
+           output reg clk_100,
+           // output clk_50,
+           output reg phi,
+           output reg sh,
+           output reg rs,
+           output reg sp
+       );
 
-reg SH, CLK, RS, SP;
-reg OS,DOS;
-reg [7:0]i; //定义几个计数量
-reg [7:0]j;
-reg [7:0]k;
-reg [13:0]h;
 
-reg run, run_1, run_2;
-reg stop, stop_1, stop_2;
+reg [7: 0] cnt_100;
+reg[13: 0] cnt_sh = 'd0;
 
-always @(posedge TRIG)
-begin
-    run_2 <= 1;
+always@(posedge clk or negedge rst_n) begin
+    // clock divider 100
+    if (!rst_n)
+        cnt_100 <= 'd0;
+    else if (cnt_100 == 'd99)
+        cnt_100 <= 'd0;
+    else
+        cnt_100 <= cnt_100 + 1'b1;
+
+    if (!rst_n)
+        clk_100 <= 1'b0;
+    else if (cnt_100 == 'd0)
+        clk_100 <= 1'b0;
+    else if (cnt_100 == 'd50)
+        clk_100 <= 1'b1;
+    else
+        clk_100 <= clk_100;
+
+    // rs output
+    if (!rst_n)
+        rs <= 'd0;
+    else if ((cnt_100 == 'd25) || (cnt_100 == 'd75))
+        rs <= 'd1;
+    else if ((cnt_100 == 'd40) || (cnt_100 == 'd90))
+        rs <= 'd0;
+    else
+        rs <= rs;
+
+    // sh counter
+    if (!rst_n)
+        cnt_sh <= 'd0;
+    else if ((cnt_sh == 'd2719) && (cnt_100 == 'd50))
+        cnt_sh <= 'd0;
+    else if (cnt_100 == 'd50)
+        cnt_sh <= cnt_sh + 'd1;
+
+    // sh output
+    if (!rst_n)
+        sh <= 'd0;
+    else if (cnt_sh == 'd1)
+        sh <= 'd1;
+    else if (cnt_sh == 'd2)
+        sh <= 'd0;
+    else
+        sh <= sh;
+
+    // phi output
+    if (!rst_n)
+        phi <= 'd0;
+    else
+        phi <= (sh) || (clk_100);
+
+    // sp output
+    if (!rst_n)
+        sp <= 'd0;
+    else if (cnt_sh < 'd3)
+        sp <= 'd0;
+    else if ((cnt_100 == 'd10) || (cnt_100 == 'd60))
+        sp <= 'd1;
+    else if ((cnt_100 == 'd23) || (cnt_100 == 'd73))
+        sp <= 'd0;
+    else
+        sp <= sp;
 end
 
-always @(posedge CLK20M) begin
-    run_1  <= run_2;
-    run    <= run_1;
-    stop_1 <= stop_2;
-    stop   <= stop_1;
-    if (run == 1 && stop == 0) begin
+// sh counter
+// always@(posedge clk_100 or negedge rst_n) begin
+//     if (!rst_n)
+//         cnt_sh <= 'd0;
+//     else if (cnt_sh == 'd2719)
+//         cnt_sh <= 'd0;
+//     else
+//         cnt_sh <= cnt_sh + 'd1;
 
-        begin   //对j累加，用于后面RS控制
-            j <= j+1;
-        end
+//     // sh output
+//     if (!rst_n)
+//         sh <= 'd0;
+//     else if (cnt_sh == 'd1)
+//         sh <= 'd1;
+//     else if (cnt_sh == 'd2)
+//         sh <= 'd0;
+//     else
+//         sh <= sh;
+// end
 
-        begin   //判断RS信号是否反转
-            if (j == 19)
-            begin
-                j  <= 0;
-                RS <= ~RS;
-                i  <= 0;
-                k  <= 12;
-            end
-            else
-                if (j < 4)
-                begin
-                    RS <= 1;
-                end
-                else
-                begin
-                    RS <= 0;
-                end
-        end
-
-        begin
-            if (SH) begin //SH高电平停止工作
-                CLK <= 1;
-                SP  <= 0;
-                DOS <= 1;
-            end
-            else begin   //SH低电平时对CLK、SP进行控制
-                begin
-                    i <= i+1;
-                    k <= k+1;
-                end
-
-                begin
-                    if (i == 19) begin   //对i进行判断，以确定 CLK 信号是否反转
-                        i   <= 0;
-                        CLK <= ~CLK;
-                    end
-                end
-
-                begin   //判断SP信号是否反转
-                    if (k == 19) begin
-                        k  <= 0;
-                        SP <= ~SP;
-                        OS <= 1;
-                    end else if (k < 2) begin
-                        SP <= 1;
-                        OS <= 1;
-                    end else begin
-                        SP <= 0;
-                        OS <= 0;
-                    end
-                end
-            end
-        end
-    end else begin
-        if (stop == 1) begin
-            stop <= 0;
-            run  <= 0;
-        end
-    end
-end
-
-always@(negedge RS)     //对SH周期的判断
-begin
-    h <= h+1;
-
-    if (h == 5411) begin
-        h  <= 0;
-        SH <= ~SH;
-    end
-
-    if (h == 0) begin
-        SH     <= 1;
-        stop_2 <= 1;
-    end else
-        SH <= 0;
-end
 
 endmodule
+
+

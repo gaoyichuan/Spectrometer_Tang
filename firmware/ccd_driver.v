@@ -25,37 +25,23 @@ ip_pll pll(
 );
 
 tcd1500c ccd(
-	.CLK20M	(clk_20m),
-	.TRIG	(CCD_TRIG),
-	.SH		(CCD_SH),
-	.CLK		(CCD_CLK),
-	.RS		(CCD_RS),
-	.SP		(CCD_SP)
+	.clk		(clk_20m),
+	.rst_n 	(RST_N),
+	.phi	(CCD_CLK),
+	.sh		(CCD_SH),
+	.rs 	(CCD_RS),
+	.sp 	(CCD_SP),
+	.clk_100 (CCD_CLK100)
 );
 
 ft245 usb_fifo(
 	.clk	(clk_50m),
-	.D	(FT_D),
-	.RD	(FT_RD),
-	.WR	(FT_WR),
-	.TXE(FT_TXE),
-	.RXF(FT_RXF)
+	.D		(FT_D),
+	.RD		(FT_RD),
+	.WR		(FT_WR),
+	.TXE	(FT_TXE),
+	.RXF	(FT_RXF)
 );
 
-
-reg CCD_TRIG;
-reg [31:0] counter;
-
-always @(posedge clk_20m)
-begin
-	counter <= counter + 1;
-	if(counter == 'hFFFFFF) begin
-		CCD_TRIG <= 1;
-	end
-	else if(counter == 'h1000FF) begin
-		CCD_TRIG <= 0;
-		counter <= 0;
-	end
-end
 
 endmodule

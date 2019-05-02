@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Project>
     <Project_Created_Time>2019-04-04 13:00:52</Project_Created_Time>
-    <TD_Version>4.3.815</TD_Version>
+    <TD_Version>4.4.433</TD_Version>
     <UCode>00000000</UCode>
     <Name>ccd_driver</Name>
     <HardWare>
@@ -22,13 +22,13 @@
     <TOP_MODULE>
         <LABEL/>
         <MODULE>ccd_driver</MODULE>
-        <CREATEINDEX>auto</CREATEINDEX>
+        <CREATEINDEX>user</CREATEINDEX>
     </TOP_MODULE>
     <Device_Settings>
         <EG4X/>
     </Device_Settings>
     <Project_Settings>
-        <Step_Last_Change>2019-04-28 11:01:09</Step_Last_Change>
+        <Step_Last_Change>2019-05-02 10:18:16</Step_Last_Change>
         <Current_Step>0</Current_Step>
         <Step_Status>true</Step_Status>
     </Project_Settings>

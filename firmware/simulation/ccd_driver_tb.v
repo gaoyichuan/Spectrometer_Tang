@@ -1,5 +1,5 @@
-// Verilog testbench created by TD v4.3.815
-// 2019-04-21 15:48:05
+// Verilog testbench created by TD v4.4.433
+// 2019-05-02 08:40:45
 
 `timescale 1ns / 1ps
 
@@ -15,6 +15,7 @@ wire CCD_SH;
 wire CCD_SP;
 wire FT_RD;
 wire FT_WR;
+wire [2:0] RGB_LED;
 wire [7:0] FT_D;
 
 //Clock process
@@ -36,6 +37,7 @@ ccd_driver uut(
 	.CCD_SP(CCD_SP),
 	.FT_RD(FT_RD),
 	.FT_WR(FT_WR),
+	.RGB_LED(RGB_LED),
 	.FT_D(FT_D));
 
 //Stimulus process
