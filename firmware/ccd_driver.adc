@@ -9,6 +9,22 @@ set_pin_assignment {CCD_RS} { LOCATION = C9; IOSTANDARD = LVCMOS33;  }
 set_pin_assignment {CCD_SP} { LOCATION = B14; IOSTANDARD = LVCMOS33;  } 
 # set_pin_assignment {CCD_OS} { LOCATION = A3; IOSTANDARD = LVCMOS33;  } 
 
+# LTC2227 ADC Pins
+set_pin_assignment {ADC_CLK} { LOCATION = R16; IOSTANDARD = LVCMOS33;  }
+set_pin_assignment {ADC_OF} { LOCATION = J11; IOSTANDARD = LVCMOS33;  }
+set_pin_assignment {ADC_D[0]} { LOCATION = A14; IOSTANDARD = LVCMOS33;  }
+set_pin_assignment {ADC_D[1]} { LOCATION = B15; IOSTANDARD = LVCMOS33;  }
+set_pin_assignment {ADC_D[2]} { LOCATION = B16; IOSTANDARD = LVCMOS33;  }
+set_pin_assignment {ADC_D[3]} { LOCATION = C16; IOSTANDARD = LVCMOS33;  }
+set_pin_assignment {ADC_D[4]} { LOCATION = N11; IOSTANDARD = LVCMOS33;  }
+set_pin_assignment {ADC_D[5]} { LOCATION = P12; IOSTANDARD = LVCMOS33;  }
+set_pin_assignment {ADC_D[6]} { LOCATION = C15; IOSTANDARD = LVCMOS33;  }
+set_pin_assignment {ADC_D[7]} { LOCATION = N12; IOSTANDARD = LVCMOS33;  }
+set_pin_assignment {ADC_D[8]} { LOCATION = E16; IOSTANDARD = LVCMOS33;  }
+set_pin_assignment {ADC_D[9]} { LOCATION = F16; IOSTANDARD = LVCMOS33;  }
+set_pin_assignment {ADC_D[10]} { LOCATION = H13; IOSTANDARD = LVCMOS33;  }
+set_pin_assignment {ADC_D[11]} { LOCATION = J13; IOSTANDARD = LVCMOS33;  }
+
 # FT245 Pins
 set_pin_assignment {FT_RD} { LOCATION = C5; IOSTANDARD = LVCMOS33;  } 
 set_pin_assignment {FT_WR} { LOCATION = T7; IOSTANDARD = LVCMOS33;  } 

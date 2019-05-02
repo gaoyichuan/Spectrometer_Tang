@@ -13,7 +13,11 @@ module ccd_driver(
            output wire FT_RD,
            output wire FT_WR,
            input wire FT_TXE,
-           input wire FT_RXF
+           input wire FT_RXF,
+
+           output wire ADC_CLK,
+           input wire [11:0] ADC_D,
+           input wire ADC_OF
        );
 
 ip_pll pll(
