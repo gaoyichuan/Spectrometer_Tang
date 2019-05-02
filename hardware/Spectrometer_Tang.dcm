@@ -1,0 +1,24 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP FT245RQ
+D Full Speed USB to 8-Bit FIFO, LQFP-32
+K FTDI USB FIFO Interface Converter
+F http://www.ftdichip.com/Products/ICs/FT245B.html
+$ENDCMP
+#
+$CMP LTC2226
+F https://www.analog.com/media/en/technical-documentation/data-sheets/222876fb.pdf
+$ENDCMP
+#
+$CMP OP37
+D Low Noise, Precision, High Speed Operational Amplifier
+K single opamp
+F https://www.analog.com/media/en/technical-documentation/data-sheets/OP37.pdf
+$ENDCMP
+#
+$CMP ST662AB
+D DC-DC converter from 5 V to 12 V, 0.03 A for Flash memory programming supply
+F https://atta.szlcsc.com/upload/public/pdf/source/20170322/1490151703021.pdf
+$ENDCMP
+#
+#End Doc Library
