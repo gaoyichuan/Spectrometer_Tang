@@ -1,0 +1,18 @@
+# td build files
+*.area
+*.db
+*.timing
+*.tsm
+*_tdmap.v
+*_tdpack.v
+*_tdread.v
+*_tdrtl.v
+
+# bitstream outputs
+*.bit
+
+# sch file
+sch_pr.v
+
+# td project backup files
+.*.al.bak

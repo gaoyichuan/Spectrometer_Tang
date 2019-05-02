@@ -14,6 +14,7 @@
             <File>al_ip/ip_pll.v</File>
             <File>ccd_driver.v</File>
             <File>ft245.v</File>
+            <File>ltc2227.v</File>
         </Verilog>
         <ADC_FILE>ccd_driver.adc</ADC_FILE>
         <SDC_FILE>ccd_driver.sdc</SDC_FILE>
@@ -28,7 +29,7 @@
         <EG4X/>
     </Device_Settings>
     <Project_Settings>
-        <Step_Last_Change>2019-05-02 10:20:26</Step_Last_Change>
+        <Step_Last_Change>2019-05-02 10:24:16</Step_Last_Change>
         <Current_Step>60</Current_Step>
         <Step_Status>true</Step_Status>
     </Project_Settings>
