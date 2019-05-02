@@ -78,27 +78,4 @@ always@(posedge clk or negedge rst_n) begin
         sp <= sp;
 end
 
-// sh counter
-// always@(posedge clk_100 or negedge rst_n) begin
-//     if (!rst_n)
-//         cnt_sh <= 'd0;
-//     else if (cnt_sh == 'd2719)
-//         cnt_sh <= 'd0;
-//     else
-//         cnt_sh <= cnt_sh + 'd1;
-
-//     // sh output
-//     if (!rst_n)
-//         sh <= 'd0;
-//     else if (cnt_sh == 'd1)
-//         sh <= 'd1;
-//     else if (cnt_sh == 'd2)
-//         sh <= 'd0;
-//     else
-//         sh <= sh;
-// end
-
-
 endmodule
-
-
