@@ -16,3 +16,6 @@ sch_pr.v
 
 # td project backup files
 .*.al.bak
+
+# td log files
+td_*.log
