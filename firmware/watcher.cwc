@@ -1,0 +1,33 @@
+<chipwatcher project_name="ccd_driver" bit_file="ccd_driver.bit" bid_file="ccd_driver_inst.bid" chip_name="EG4S20BG256">
+	<instance name="auto_chipwatcher_0" id="0" enabled="yes">
+		<clock clk_name="CLK_IN" polarity="posedge"/>
+		<config bram_name="auto_chipwatcher_0_logicbram" sample_depth="8192"/>
+		<signal_vec>
+			<trigger_nets>
+				<net name="CCD_SH"/>
+				<net name="FT_WR"/>
+				<net name="clk_50m"/>
+			</trigger_nets>
+			<data_nets>
+				<net name="CCD_SH"/>
+				<net name="FT_WR"/>
+				<net name="clk_50m"/>
+			</data_nets>
+			<watcher_nodes>
+				<net name="clk_50m"/>
+				<net name="FT_WR"/>
+				<net name="CCD_SH"/>
+			</watcher_nodes>
+		</signal_vec>
+		<trigger name="auto_chipwatcher_0_trigger" position="pre">
+			<condition level="1" enabled="yes" type="basic_and">
+				CCD_SH == any && FT_WR == any && clk_50m == any
+			</condition>
+			<log>
+				<data name="log: 2019/ 5/22 21:40: 7" trigger_en="yes" trigger_pos="20" sample_num="64">
+					000000000000000000000000000000000000000000000000000000000000000000000000000000000000111110000011110000000000000000000000000000000101001010110101001010110101001010110101001010110101001010110101
+				</data>
+			</log>
+		</trigger>
+	</instance>
+</chipwatcher>

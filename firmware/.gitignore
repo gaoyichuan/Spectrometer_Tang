@@ -8,6 +8,13 @@
 *_tdread.v
 *_tdrtl.v
 
+# chipwatcher inst files
+*_inst.bid
+*_watcherInst.v
+
+# chipwatcher
+*.cwc
+
 # bitstream outputs
 *.bit
 

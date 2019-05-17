@@ -7,6 +7,7 @@ set_pin_assignment {CCD_SH} { LOCATION = B6; IOSTANDARD = LVCMOS33;  }
 set_pin_assignment {CCD_CLK} { LOCATION = B10; IOSTANDARD = LVCMOS33;  } 
 set_pin_assignment {CCD_RS} { LOCATION = C9; IOSTANDARD = LVCMOS33;  } 
 set_pin_assignment {CCD_SP} { LOCATION = B14; IOSTANDARD = LVCMOS33;  } 
+# set_pin_assignment {CCD_EN} { LOCATION = M12; IOSTANDARD = LVCMOS33;  } 
 # set_pin_assignment {CCD_OS} { LOCATION = A3; IOSTANDARD = LVCMOS33;  } 
 
 # LTC2227 ADC Pins

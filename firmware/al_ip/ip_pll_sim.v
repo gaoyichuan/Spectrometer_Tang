@@ -1,5 +1,5 @@
-// Verilog netlist created by TD v4.3.815
-// Sat Apr 20 16:10:52 2019
+// Verilog netlist created by TD v4.4.433
+// Wed May 22 17:30:22 2019
 
 `timescale 1ns / 1ps
 module ip_pll  // al_ip/ip_pll.v(23)
@@ -34,8 +34,8 @@ module ip_pll  // al_ip/ip_pll.v(23)
     .CLKC0_DIV2_ENABLE("DISABLE"),
     .CLKC0_ENABLE("ENABLE"),
     .CLKC0_FPHASE(0),
-    .CLKC1_CPHASE(19),
-    .CLKC1_DIV(20),
+    .CLKC1_CPHASE(99),
+    .CLKC1_DIV(100),
     .CLKC1_DIV2_ENABLE("DISABLE"),
     .CLKC1_ENABLE("ENABLE"),
     .CLKC1_FPHASE(0),
