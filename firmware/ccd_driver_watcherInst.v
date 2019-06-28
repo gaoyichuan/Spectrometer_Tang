@@ -1,5 +1,5 @@
 module CFG_INT_WRAPPER(jtdi, jtck, jrstn, jrti, jscan, jshift, jupdate, jtdo, status, control);
-	localparam DEFAULT_CTRL_LEN = 31;
+	localparam DEFAULT_CTRL_LEN = 25;
 	localparam DEFAULT_STAT_LEN = 18;
 	localparam DEFAULT_TRIG_NUM = 1;
 	input jtdi;
@@ -29,8 +29,8 @@ module CFG_INT_WRAPPER(jtdi, jtck, jrstn, jrti, jscan, jshift, jupdate, jtdo, st
 endmodule
 
 
-module TRIGGER_NODE_WRAPPER_3(trig_clk, trig_rstn, pause, trig_logic, trig_din, trig_edge_mode, trig_len, trig_stop_len, cfg_clk, cfg_rstn, overflow_flag, stop_flag, stop_addr,  wt_ce, wt_en, wt_addr);
-	localparam DEFAULT_DET_NUM = 3;
+module TRIGGER_NODE_WRAPPER_1(trig_clk, trig_rstn, pause, trig_logic, trig_din, trig_edge_mode, trig_len, trig_stop_len, cfg_clk, cfg_rstn, overflow_flag, stop_flag, stop_addr,  wt_ce, wt_en, wt_addr);
+	localparam DEFAULT_DET_NUM = 1;
 	localparam DEFAULT_STOP_LEN = 5461;
 	input [DEFAULT_DET_NUM-1:0] trig_din;
 	input trig_clk;

@@ -11,7 +11,8 @@
 		<feedback_mode>Normal</feedback_mode>
 		<clk_num>CLKC0</clk_num>
 		<enable_reset>ENABLE</enable_reset>
-		<pll_lock>ENABLE</pll_lock>
+		<derive_pll_clocks>ENABLE</derive_pll_clocks>
+		<gen_basic_clocks>ENABLE</gen_basic_clocks>
 	</Page1>
 	<Page2>
 		<bandwidth_setting>Medium</bandwidth_setting>
@@ -19,16 +20,10 @@
 	<Page3>
 		<setting>frequncy_setting</setting>
 		<multiplication_factor>5</multiplication_factor>
-		<division_factor>6</division_factor>
+		<division_factor>12</division_factor>
 		<clocks>
 			<clock>
 				<id>0</id>
-				<clock_division_factor>50</clock_division_factor>
-				<clock_frequency>20.000Mhz</clock_frequency>
-				<phase_shift>0.000deg</phase_shift>
-			</clock>
-			<clock>
-				<id>1</id>
 				<clock_division_factor>100</clock_division_factor>
 				<clock_frequency>10.000Mhz</clock_frequency>
 				<phase_shift>0.000deg</phase_shift>

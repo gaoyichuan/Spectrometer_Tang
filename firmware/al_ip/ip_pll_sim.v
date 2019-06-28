@@ -1,27 +1,23 @@
 // Verilog netlist created by TD v4.4.433
-// Wed May 22 17:30:22 2019
+// Wed Jun 26 20:08:53 2019
 
 `timescale 1ns / 1ps
-module ip_pll  // al_ip/ip_pll.v(23)
+module ip_pll  // al_ip/ip_pll.v(22)
   (
   refclk,
   reset,
-  clk0_out,
-  clk1_out,
-  extlock
+  clk0_out
   );
 
-  input refclk;  // al_ip/ip_pll.v(29)
-  input reset;  // al_ip/ip_pll.v(30)
-  output clk0_out;  // al_ip/ip_pll.v(32)
-  output clk1_out;  // al_ip/ip_pll.v(33)
-  output extlock;  // al_ip/ip_pll.v(31)
+  input refclk;  // al_ip/ip_pll.v(26)
+  input reset;  // al_ip/ip_pll.v(27)
+  output clk0_out;  // al_ip/ip_pll.v(28)
 
-  wire clk0_buf;  // al_ip/ip_pll.v(35)
+  wire clk0_buf;  // al_ip/ip_pll.v(30)
 
   EG_PHY_GCLK bufg_feedback (
     .clki(clk0_buf),
-    .clko(clk0_out));  // al_ip/ip_pll.v(37)
+    .clko(clk0_out));  // al_ip/ip_pll.v(32)
   EG_PHY_CONFIG #(
     .DONE_PERSISTN("ENABLE"),
     .INIT_PERSISTN("ENABLE"),
@@ -29,15 +25,15 @@ module ip_pll  // al_ip/ip_pll.v(23)
     .PROGRAMN_PERSISTN("DISABLE"))
     config_inst ();
   EG_PHY_PLL #(
-    .CLKC0_CPHASE(49),
-    .CLKC0_DIV(50),
+    .CLKC0_CPHASE(99),
+    .CLKC0_DIV(100),
     .CLKC0_DIV2_ENABLE("DISABLE"),
     .CLKC0_ENABLE("ENABLE"),
     .CLKC0_FPHASE(0),
-    .CLKC1_CPHASE(99),
-    .CLKC1_DIV(100),
+    .CLKC1_CPHASE(1),
+    .CLKC1_DIV(1),
     .CLKC1_DIV2_ENABLE("DISABLE"),
-    .CLKC1_ENABLE("ENABLE"),
+    .CLKC1_ENABLE("DISABLE"),
     .CLKC1_FPHASE(0),
     .CLKC2_CPHASE(1),
     .CLKC2_DIV(1),
@@ -54,7 +50,7 @@ module ip_pll  // al_ip/ip_pll.v(23)
     .CLKC4_DIV2_ENABLE("DISABLE"),
     .CLKC4_ENABLE("DISABLE"),
     .CLKC4_FPHASE(0),
-    .DERIVE_PLL_CLOCKS("DISABLE"),
+    .DERIVE_PLL_CLOCKS("ENABLE"),
     .DPHASE_SOURCE("DISABLE"),
     .DYNCFG("DISABLE"),
     .FBCLK_DIV(5),
@@ -62,7 +58,7 @@ module ip_pll  // al_ip/ip_pll.v(23)
     .FEEDBK_PATH("CLKC0_EXT"),
     .FIN("24.000"),
     .FREQ_LOCK_ACCURACY(2),
-    .GEN_BASIC_CLOCK("DISABLE"),
+    .GEN_BASIC_CLOCK("ENABLE"),
     .GMC_GAIN(6),
     .GMC_TEST(14),
     .ICP_CURRENT(3),
@@ -87,7 +83,7 @@ module ip_pll  // al_ip/ip_pll.v(23)
     .PREDIV_MUXC2("VCO"),
     .PREDIV_MUXC3("VCO"),
     .PREDIV_MUXC4("VCO"),
-    .REFCLK_DIV(6),
+    .REFCLK_DIV(12),
     .REFCLK_SEL("INTERNAL"),
     .STDBY_ENABLE("DISABLE"),
     .STDBY_VCO_ENA("DISABLE"),
@@ -107,8 +103,7 @@ module ip_pll  // al_ip/ip_pll.v(23)
     .refclk(refclk),
     .reset(reset),
     .stdby(1'b0),
-    .clkc({open_n47,open_n48,open_n49,clk1_out,clk0_buf}),
-    .extlock(extlock));  // al_ip/ip_pll.v(64)
+    .clkc({open_n47,open_n48,open_n49,open_n50,clk0_buf}));  // al_ip/ip_pll.v(55)
 
 endmodule 
 

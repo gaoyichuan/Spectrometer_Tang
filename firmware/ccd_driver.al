@@ -2,7 +2,7 @@
 <Project>
     <Project_Created_Time>2019-04-04 13:00:52</Project_Created_Time>
     <TD_Version>4.4.433</TD_Version>
-    <UCode>11001001</UCode>
+    <UCode>00000000</UCode>
     <Name>ccd_driver</Name>
     <HardWare>
         <Family>EG4</Family>
@@ -27,7 +27,7 @@
         <EG4X/>
     </Device_Settings>
     <Project_Settings>
-        <Step_Last_Change>2019-05-22 21:44:16</Step_Last_Change>
+        <Step_Last_Change>2019-06-28 14:28:36</Step_Last_Change>
         <Current_Step>60</Current_Step>
         <Step_Status>true</Step_Status>
     </Project_Settings>

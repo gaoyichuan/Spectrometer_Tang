@@ -5,7 +5,8 @@ module tcd1500c (
            output reg sh,
            output reg rs,
            output reg sp,
-           output reg clk_100
+           output reg clk_100,
+           output reg done
 );
 
 
@@ -43,11 +44,15 @@ always@(posedge clk or negedge rst_n) begin
         rs <= rs;
 	
  	// sh output
- 	if (!rst_n)
+ 	if (!rst_n) begin
         cnt_sh <= 'd0;
-    else if ((cnt_sh == 'd2719) && (cnt_100 == 'd50))
+        done <= 'd0;
+    end else if ((cnt_sh == 'd2719) && (cnt_100 == 'd0))
+        done <= 'd1;
+    else if ((cnt_sh == 'd2719) && (cnt_100 == 'd50)) begin
         cnt_sh <= 'd0;
-    else if (cnt_100 == 'd50)
+        done <= 'd0;
+    end else if (cnt_100 == 'd50)
         cnt_sh <= cnt_sh + 'd1;
 
 // 	cnt_sh1 <= cnt_sh;
