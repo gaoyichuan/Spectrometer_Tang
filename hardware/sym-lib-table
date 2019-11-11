@@ -1,3 +1,4 @@
 (sym_lib_table
   (lib (name Spectrometer_Tang)(type Legacy)(uri ${KIPRJMOD}/Spectrometer_Tang.lib)(options "")(descr ""))
+  (lib (name Spectrometer_Tang-rescue)(type Legacy)(uri ${KIPRJMOD}/Spectrometer_Tang-rescue.lib)(options "")(descr ""))
 )

@@ -1,6 +1,6 @@
 EESchema Schematic File Version 4
 LIBS:Spectrometer_Tang-cache
-EELAYER 29 0
+EELAYER 30 0
 EELAYER END
 $Descr A3 16535 11693
 encoding utf-8
@@ -31,7 +31,7 @@ U 1 1 5CA77A1D
 P 1950 5550
 F 0 "J1" H 2057 6417 50  0000 C CNN
 F 1 "USB_C_Receptacle_USB2.0" H 2057 6326 50  0000 C CNN
-F 2 "Connector_USB:USB_C_Receptacle_Amphenol_12401548E4-2A" H 2100 5550 50  0001 C CNN
+F 2 "Connector_USB:USB_C_Receptacle_HRO_TYPE-C-31-M-12" H 2100 5550 50  0001 C CNN
 F 3 "https://www.usb.org/sites/default/files/documents/usb_type-c.zip" H 2100 5550 50  0001 C CNN
 	1    1950 5550
 	1    0    0    -1  
@@ -246,141 +246,70 @@ Wire Wire Line
 Wire Wire Line
 	6750 1850 7500 1850
 $Comp
-L Logic_LevelTranslator:TXB0104PW U5
-U 1 1 5CACDE9A
-P 9350 2250
-F 0 "U5" H 9350 1461 50  0000 C CNN
-F 1 "TXB0104PW" H 9350 1370 50  0000 C CNN
-F 2 "Package_SO:TSSOP-14_4.4x5mm_P0.65mm" H 9350 1500 50  0001 C CNN
-F 3 "http://www.ti.com/lit/ds/symlink/txb0104.pdf" H 9460 2345 50  0001 C CNN
-	1    9350 2250
-	1    0    0    -1  
-$EndComp
-$Comp
-L power:+3.3V #PWR029
-U 1 1 5CAD4E48
-P 9250 1400
-F 0 "#PWR029" H 9250 1250 50  0001 C CNN
-F 1 "+3.3V" H 9265 1573 50  0000 C CNN
-F 2 "" H 9250 1400 50  0001 C CNN
-F 3 "" H 9250 1400 50  0001 C CNN
-	1    9250 1400
-	1    0    0    -1  
-$EndComp
-$Comp
 L power:+5V #PWR031
 U 1 1 5CAD5666
-P 9450 1400
-F 0 "#PWR031" H 9450 1250 50  0001 C CNN
-F 1 "+5V" H 9465 1573 50  0000 C CNN
-F 2 "" H 9450 1400 50  0001 C CNN
-F 3 "" H 9450 1400 50  0001 C CNN
-	1    9450 1400
+P 9950 1450
+F 0 "#PWR031" H 9950 1300 50  0001 C CNN
+F 1 "+5V" H 9965 1623 50  0000 C CNN
+F 2 "" H 9950 1450 50  0001 C CNN
+F 3 "" H 9950 1450 50  0001 C CNN
+	1    9950 1450
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	9450 1400 9450 1500
-Wire Wire Line
-	9250 1550 9250 1500
+	9950 1450 9950 1550
 $Comp
 L Device:C C14
 U 1 1 5CAD6CC1
-P 9800 1500
-F 0 "C14" V 9548 1500 50  0000 C CNN
-F 1 "100nF" V 9639 1500 50  0000 C CNN
-F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.05x0.95mm_HandSolder" H 9838 1350 50  0001 C CNN
-F 3 "~" H 9800 1500 50  0001 C CNN
-	1    9800 1500
-	0    1    1    0   
-$EndComp
-$Comp
-L Device:C C11
-U 1 1 5CAD74A8
-P 8900 1500
-F 0 "C11" V 8648 1500 50  0000 C CNN
-F 1 "100nF" V 8739 1500 50  0000 C CNN
-F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.05x0.95mm_HandSolder" H 8938 1350 50  0001 C CNN
-F 3 "~" H 8900 1500 50  0001 C CNN
-	1    8900 1500
+P 10300 1550
+F 0 "C14" V 10048 1550 50  0000 C CNN
+F 1 "100nF" V 10139 1550 50  0000 C CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.05x0.95mm_HandSolder" H 10338 1400 50  0001 C CNN
+F 3 "~" H 10300 1550 50  0001 C CNN
+	1    10300 1550
 	0    1    1    0   
 $EndComp
 Wire Wire Line
-	9050 1500 9250 1500
-Connection ~ 9250 1500
-Wire Wire Line
-	9250 1500 9250 1400
-Wire Wire Line
-	9450 1500 9650 1500
-Connection ~ 9450 1500
-Wire Wire Line
-	9450 1500 9450 1550
-$Comp
-L power:Earth #PWR027
-U 1 1 5CAD8E29
-P 8600 1500
-F 0 "#PWR027" H 8600 1250 50  0001 C CNN
-F 1 "Earth" H 8600 1350 50  0001 C CNN
-F 2 "" H 8600 1500 50  0001 C CNN
-F 3 "~" H 8600 1500 50  0001 C CNN
-	1    8600 1500
-	0    1    1    0   
-$EndComp
+	9950 1550 10150 1550
+Connection ~ 9950 1550
 $Comp
 L power:Earth #PWR033
 U 1 1 5CAD94F1
-P 10150 1500
-F 0 "#PWR033" H 10150 1250 50  0001 C CNN
-F 1 "Earth" H 10150 1350 50  0001 C CNN
-F 2 "" H 10150 1500 50  0001 C CNN
-F 3 "~" H 10150 1500 50  0001 C CNN
-	1    10150 1500
+P 10650 1550
+F 0 "#PWR033" H 10650 1300 50  0001 C CNN
+F 1 "Earth" H 10650 1400 50  0001 C CNN
+F 2 "" H 10650 1550 50  0001 C CNN
+F 3 "~" H 10650 1550 50  0001 C CNN
+	1    10650 1550
 	0    -1   -1   0   
 $EndComp
 Wire Wire Line
-	9950 1500 10150 1500
-Wire Wire Line
-	8750 1500 8600 1500
-Wire Wire Line
-	8650 1950 8950 1950
-Wire Wire Line
-	8650 2550 8950 2550
-Wire Wire Line
-	8650 2350 8950 2350
-Wire Wire Line
-	8650 2150 8950 2150
-Text Label 9850 2150 0    50   ~ 0
+	10450 1550 10650 1550
+Text Label 9050 2000 0    50   ~ 0
 CCD_RS
-Text Label 9850 2350 0    50   ~ 0
+Text Label 9050 2350 0    50   ~ 0
 CCD_CLK
-Text Label 9850 2550 0    50   ~ 0
+Text Label 9050 2700 0    50   ~ 0
 CCD_SP
-Text Label 9850 1950 0    50   ~ 0
+Text Label 9050 1650 0    50   ~ 0
 CCD_SH
 Wire Wire Line
-	9750 2350 10200 2350
+	8950 2350 9400 2350
 Wire Wire Line
-	9750 2550 10200 2550
+	8950 2700 9400 2700
 Wire Wire Line
-	9750 1950 10200 1950
+	8950 1650 9400 1650
 Wire Wire Line
-	9750 2150 10200 2150
-Text Label 8650 1950 0    50   ~ 0
-SH
-Text Label 8650 2550 0    50   ~ 0
-SP
-Text Label 8650 2350 0    50   ~ 0
-CLK
-Text Label 8650 2150 0    50   ~ 0
-RS
+	8950 2000 9400 2000
 $Comp
 L power:Earth #PWR030
 U 1 1 5CAE8739
-P 9350 2950
-F 0 "#PWR030" H 9350 2700 50  0001 C CNN
-F 1 "Earth" H 9350 2800 50  0001 C CNN
-F 2 "" H 9350 2950 50  0001 C CNN
-F 3 "~" H 9350 2950 50  0001 C CNN
-	1    9350 2950
+P 9950 2800
+F 0 "#PWR030" H 9950 2550 50  0001 C CNN
+F 1 "Earth" H 9950 2650 50  0001 C CNN
+F 2 "" H 9950 2800 50  0001 C CNN
+F 3 "~" H 9950 2800 50  0001 C CNN
+	1    9950 2800
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -640,7 +569,7 @@ ADC_MODE
 Wire Wire Line
 	13700 1050 13700 1500
 $Comp
-L tm-kicad-lib:XC6206 U7
+L Spectrometer_Tang-rescue:XC6206-tm-kicad-lib U7
 U 1 1 5CC05DEB
 P 13250 7750
 F 0 "U7" H 12800 8000 60  0000 C CNN
@@ -2396,6 +2325,82 @@ Wire Wire Line
 	3300 10050 3300 10150
 Wire Wire Line
 	3300 10150 3100 10150
+Connection ~ 3100 10150
+$Comp
+L 74xx:74HC04 U5
+U 7 1 5DCD7F4E
+P 9950 2200
+F 0 "U5" H 10180 2246 50  0000 L CNN
+F 1 "74HC04" H 10180 2155 50  0000 L CNN
+F 2 "" H 9950 2200 50  0001 C CNN
+F 3 "https://assets.nexperia.com/documents/data-sheet/74HC_HCT04.pdf" H 9950 2200 50  0001 C CNN
+	7    9950 2200
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	9950 1550 9950 1700
+Wire Wire Line
+	9950 2700 9950 2800
+$Comp
+L 74xx:74HC04 U5
+U 1 1 5DE3673E
+P 8650 1650
+F 0 "U5" H 8650 1967 50  0000 C CNN
+F 1 "74HC04" H 8650 1876 50  0000 C CNN
+F 2 "Package_SO:TSSOP-14_4.4x5mm_P0.65mm" H 8650 1650 50  0001 C CNN
+F 3 "https://assets.nexperia.com/documents/data-sheet/74HC_HCT04.pdf" H 8650 1650 50  0001 C CNN
+	1    8650 1650
+	1    0    0    -1  
+$EndComp
+$Comp
+L 74xx:74HC04 U5
+U 2 1 5DE38810
+P 8650 2000
+F 0 "U5" H 8650 2317 50  0000 C CNN
+F 1 "74HC04" H 8650 2226 50  0000 C CNN
+F 2 "" H 8650 2000 50  0001 C CNN
+F 3 "https://assets.nexperia.com/documents/data-sheet/74HC_HCT04.pdf" H 8650 2000 50  0001 C CNN
+	2    8650 2000
+	1    0    0    -1  
+$EndComp
+$Comp
+L 74xx:74HC04 U5
+U 3 1 5DE3ADB0
+P 8650 2350
+F 0 "U5" H 8650 2667 50  0000 C CNN
+F 1 "74HC04" H 8650 2576 50  0000 C CNN
+F 2 "" H 8650 2350 50  0001 C CNN
+F 3 "https://assets.nexperia.com/documents/data-sheet/74HC_HCT04.pdf" H 8650 2350 50  0001 C CNN
+	3    8650 2350
+	1    0    0    -1  
+$EndComp
+$Comp
+L 74xx:74HC04 U5
+U 4 1 5DE3C207
+P 8650 2700
+F 0 "U5" H 8650 3017 50  0000 C CNN
+F 1 "74HC04" H 8650 2926 50  0000 C CNN
+F 2 "" H 8650 2700 50  0001 C CNN
+F 3 "https://assets.nexperia.com/documents/data-sheet/74HC_HCT04.pdf" H 8650 2700 50  0001 C CNN
+	4    8650 2700
+	1    0    0    -1  
+$EndComp
+Text Label 8050 2000 0    50   ~ 0
+RS
+Text Label 8050 2350 0    50   ~ 0
+CLK
+Text Label 8050 2700 0    50   ~ 0
+SP
+Text Label 8050 1650 0    50   ~ 0
+SH
+Wire Wire Line
+	8050 2000 8350 2000
+Wire Wire Line
+	8050 2350 8350 2350
+Wire Wire Line
+	8050 2700 8350 2700
+Wire Wire Line
+	8050 1650 8350 1650
 Wire Bus Line
 	14000 3950 15150 3950
 Wire Bus Line
@@ -2404,5 +2409,4 @@ Wire Bus Line
 	15150 1100 15150 3950
 Wire Bus Line
 	1700 7850 1700 8750
-Connection ~ 3100 10150
 $EndSCHEMATC
